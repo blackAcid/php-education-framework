@@ -1,11 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: anna
- * Date: 11.11.13
- * Time: 11:14
- */
-
+require_once("Request.php");
 class Controller {
-
+    /*private $request;
+    function __construct($request){
+        $this->request=empty($request)?$this->newRequest():$request;
+    }
+    function getRequest(){
+        return $this->request;
+    }
+    function newRequest(){
+        return new Request();
+    }*/
 } 

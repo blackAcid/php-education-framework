@@ -1,7 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: anna
- * Date: 11.11.13
- * Time: 11:48
- */ 
+//ini_set('display_errors',1);
+require_once 'bootstart.php';
+
+try{
+    $req=new Request();
+    FrontController::dispatch($req);
+}catch (Exception $e){
+    $e->getMessage();
+}

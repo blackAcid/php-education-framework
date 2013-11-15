@@ -7,3 +7,4 @@ function __autoload($file) {
      $file=DIR_CORE.$file.'.php';
      require_once ($file);
 }
+

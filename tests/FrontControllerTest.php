@@ -5,29 +5,26 @@
  * Date: 11/14/13
  * Time: 10:17 AM
  */
-require_once realpath(__DIR__ . "/../../vendor/autoload.php");
-
-use \Core;
+//require_once realpath(__DIR__ . "/../../vendor/autoload.php");
+require_once realpath(__DIR__ . "/../application/core/FrontController.php");
+require_once realpath(__DIR__ . "/../bootstart.php");
 
 class FrontControllerTest extends PHPUnit_Framework_TestCase{
     public function testDispatch()
     {
         $message = Core\FrontController::hello();
-
         $this->assertEquals($message, 'hello');
     }
 
     public function testGetInstance()
     {
-        $frontController = Core\FrontController::getInstance();
-
-        $this->assertInstanceOf('Core\FrontController', $frontController);
+        $frontController = FrontController::getInstance();
+        $this->assertInstanceOf('FrontController', $frontController);
     }
 
     public function testGetControllerPath()
     {
-        $frontController = new Core\FrontController();
-
-        $this->assertEquals($frontController->getControllerPath('Index', 'default'), ROOT . '/application/modules/default/controllers/Index.php');
+        $frontController = new FrontController();
+        $this->assertEquals($frontController->getControllerPath('Index', 'default'), DIR_MOD.'default/controllers/Index.php');
     }
 } 

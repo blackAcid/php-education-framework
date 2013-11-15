@@ -10,7 +10,7 @@
 </header>
 
 <section>
-    <?php include '/var/www/php-education-framework/application/modules/'.$module.'/views/'.$content; ?>
+    <?php include DIR_MOD.$module.'/views/'.$content; ?>
 </section>
 <footer>
 

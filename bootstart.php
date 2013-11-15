@@ -6,10 +6,3 @@ function __autoload($file) {
      $file=ROOT . '/application/core/'.$file.'.php';
      require_once($file);
 }
-
-
-
-
-
-
-?>

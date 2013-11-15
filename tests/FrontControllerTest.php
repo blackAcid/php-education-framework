@@ -9,13 +9,8 @@
 require_once realpath(__DIR__ . "/../application/core/FrontController.php");
 require_once realpath(__DIR__ . "/../bootstart.php");
 
-class FrontControllerTest extends PHPUnit_Framework_TestCase{
-    public function testDispatch()
-    {
-        $message = Core\FrontController::hello();
-        $this->assertEquals($message, 'hello');
-    }
-
+class FrontControllerTest extends PHPUnit_Framework_TestCase
+{
     public function testGetInstance()
     {
         $frontController = FrontController::getInstance();
@@ -27,4 +22,4 @@ class FrontControllerTest extends PHPUnit_Framework_TestCase{
         $frontController = new FrontController();
         $this->assertEquals($frontController->getControllerPath('Index', 'default'), DIR_MOD.'default/controllers/Index.php');
     }
-} 
+}

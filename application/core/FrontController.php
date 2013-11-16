@@ -5,7 +5,6 @@ class FrontController
      * @var FrontController
      */
     static protected $instance;
-
     public static function getInstance()
     {
         if (!self::$instance) {
@@ -44,11 +43,11 @@ class FrontController
     public static function dispatch(Request $request)
     {
         $module=$request->getModule();
-        Registry::setValue('module', $module);
+        Registry::setValue($module, 'module');
         $controller= ucfirst($request->getController());
         $action=$request->getAction().'Action';
-        $controller_file = self::getInstance() -> getControllerPath($controller, $module);
-        $controller_class = self::getInstance() -> getControllerClass($controller, $controller_file);
-        self::getInstance() -> getControllerMethod($controller_class, $action, $controller_file);
+        $controller_file=self::getInstance()->getControllerPath($controller, $module);
+        $controller_class=self::getInstance()->getControllerClass($controller, $controller_file);
+        self::getInstance()->getControllerMethod($controller_class, $action, $controller_file);
     }
 }

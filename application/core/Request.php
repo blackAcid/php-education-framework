@@ -1,55 +1,54 @@
 <?php
-
-class Request {
+class Request
+{
     private $controller="index";
     private $action="index";
     private $module="default";
     private $params;
-   // private $view;
-    function __construct(){
-       //$this->parseURI();
+    // private $view;
+    public function __construct()
+    {
+        //$this->parseURI();
     }
-    function getController(){
+    public function getController()
+    {
         return $this->controller;
     }
-    function getAction(){
+    public function getAction()
+    {
         return $this->action;
     }
-    function getModule(){
+    public function getModule()
+    {
         return $this->module;
     }
-
-    function getParams(){
+    public function getParams()
+    {
         return $this->params;
     }
 
-    private function parseURI(){
-
+    private function parseURI()
+    {
         $routes = explode('/', $_SERVER['REQUEST_URI']);
-      //  print_r($routes);
-
+        //  print_r($routes);
         if (!empty($routes[1]) && !empty($routes[2])) {
             $this->module=$routes[1];
             $this->controller=$routes[2];
         }
         if (!empty($routes[3])) {
-            $temp=preg_split("/\?/",$routes[3]);
-
-            if(!empty($temp)){
+            $temp=preg_split("/\?/", $routes[3]);
+            if (!empty($temp)) {
                 $this->action=array_shift($temp);
-                for($j=0;$j<count($temp);$j++){
-                    $key_val=explode('&',$temp[$j]);
-                    $eq=strpos($key_val[$j],'=');
-                    $key=substr($key_val[$j],0,$eq);
-                    $value=substr($key_val[$j],$eq+1);
+                for ($j=0; $j<count($temp); $j++) {
+                    $key_val=explode('&', $temp[$j]);
+                    $eq=strpos($key_val[$j], '=');
+                    $key=substr($key_val[$j], 0, $eq);
+                    $value=substr($key_val[$j], $eq+1);
                     $this->params[$key][$value];
                 }
-            }else{
+            } else {
                 $this->action = $routes[3];
             }
         }
-
-
     }
-
 }

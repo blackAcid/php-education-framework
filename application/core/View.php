@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin
 class View
 {
     public function display($content, $data = array())

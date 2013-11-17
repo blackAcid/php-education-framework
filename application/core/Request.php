@@ -1,4 +1,6 @@
 <?php
+namespace application\core;
+
 class Request
 {
     private $controller="index";

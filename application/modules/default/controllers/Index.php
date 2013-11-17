@@ -1,4 +1,7 @@
 <?php
+namespace application\modules\defaul\controllers;
+
+use application\core\View;
 
 class IndexController
 {

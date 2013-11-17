@@ -1,2 +1,2 @@
-<h2>Home page</h2>
-
+<?php
+echo '<h2>Home page</h2>';

@@ -1,4 +1,6 @@
 <?php
+namespace application\core;
+
 class View
 {
     public function display($content, $data = array())

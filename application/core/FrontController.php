@@ -1,4 +1,8 @@
 <?php
+namespace application\core;
+
+use \Exception;
+
 class FrontController
 {
     /**

@@ -29,7 +29,7 @@ class FrontController
     public function getControllerClass($controller, $controller_file)
     {
         require_once $controller_file;
-        $class=$controller.'Controller';
+        $class='application\modules\defaul\controllers\\' . $controller . 'Controller';
         if (!class_exists($class)) {
             throw new Exception("Class not found");
         }

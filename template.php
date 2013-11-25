@@ -10,7 +10,7 @@
 </header>
 
 <section>
-    <?php include DIR_MOD.$module.'/views/'.$content; ?>
+    <?php require_once DIR_MOD.$module.'/views/'.$content;?>
 </section>
 <footer>
 
